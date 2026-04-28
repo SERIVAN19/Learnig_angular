@@ -1,12 +1,14 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
+//import { ProductoComponent } from './producto/producto.component';
+import { Usuario } from './usuario/usuario';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet],
+  imports: [Usuario],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
 export class App {
-  protected readonly title = signal('learning_angular');
+  protected readonly title = signal('learning_angular_with_udemy');
 }

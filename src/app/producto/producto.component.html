@@ -1,0 +1,14 @@
+<h1>Producto</h1>
+<p>Este es el producto de mi componente</p>
+<h2>Detalles del producto</h2>
+
+<!--Imprimiendo valores-->
+<p><strong>Nombre:</strong> {{ nombre }}</p>
+<p><strong>Marca:</strong> {{ marca }}</p>
+<p><strong>Precio:</strong> ${{ precio }}</p>
+
+<button (click)="cambiarNombre()">Cambiar nombre</button>
+
+<!--usando los otros componentes-->
+<app-usuario></app-usuario>
+<app-ventas></app-ventas>
