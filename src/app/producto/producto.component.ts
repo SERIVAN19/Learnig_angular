@@ -1,12 +1,13 @@
 import { Component } from "@angular/core";
-import { Ventas } from "../ventas/ventas";
+import { VentasComponent } from "../ventas/ventas";
 import { Usuario } from "../usuario/usuario";
 
 
 //Esto es un decorador
 @Component({
+  standalone: true,
   selector: "app-producto",
-  imports: [Usuario, Ventas],
+  imports: [Usuario, VentasComponent],
   templateUrl: "producto.component.html",
 })
 

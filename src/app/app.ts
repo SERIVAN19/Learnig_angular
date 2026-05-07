@@ -3,11 +3,13 @@ import { RouterOutlet } from '@angular/router';
 //import { ProductoComponent } from './producto/producto.component';
 import { Usuario } from './usuario/usuario';
 
+
 @Component({
+  standalone: true,
   selector: 'app-root',
   imports: [Usuario],
   templateUrl: './app.html',
-  styleUrl: './app.css'
+  styleUrls: ['./app.css']
 })
 export class App {
   protected readonly title = signal('learning_angular_with_udemy');

@@ -13,3 +13,76 @@
 <a [href]="web" 
 [class.existe]="web" 
 target="_blank">Visitar sitio web</a>
+
+
+
+<!--Estructura de control en plantillas-->
+<h2>Estructura de control en plantillas</h2>
+@if (redirigir == true) {
+  <p>Redirigiendo...{{ web }} es un sitio web válido</p>
+}@else {
+    <p>El enlace no va a funcionar !!</p>
+}
+
+<button (click)="cambioRedireccion()">Cambiar Redirección</button>
+
+<!--Bucles en plantillas-->
+<h3>Marcas de pádel</h3>
+<ul>
+  @for (marca of marcasPadel; track marca) {
+    <li>{{ marca }}</li>
+  }
+</ul>
+
+<h3>Equipos de fútbol</h3>
+<ul>
+  @for (team of soccerTeams; track team.id) {
+    <li>(Id: {{ team.id }}){{ team.name }}</li>
+  }@empty {
+    <li>No hay equipos disponibles.</li>
+  }
+</ul>
+
+<hr>
+
+<!---->
+@if (user.role == 'admin') {
+  <p>Bienvenido, administrador {{ user.name }}</p>
+  <app-ventas></app-ventas>
+} @else if (user.role == 'user') {
+    <p>Bienvenido, usuario {{ user.name }}</p>
+} @else {
+    <p>Bienvenido, invitado</p>
+}
+
+<hr>
+
+<!--Switch-->
+@switch (user.role) {
+  @case ('admin') {
+    <p>Bienvenido, administrador {{ user.name }}</p>
+    <app-ventas></app-ventas>
+  }
+  @case ('user') {
+    <p>Bienvenido, usuario {{ user.name }}</p>
+  }
+  @default {
+    <p>Bienvenido, invitado</p>
+  }
+}
+
+
+<!--Mas acerca de las plantillas-->
+<ng-container>
+  <h1>Más acerca de las plantillas</h1>
+</ng-container>
+
+<!--Variables en plantillas de Angular-->
+@let country = 'Colombia';
+<p>El país es: {{ country }}</p>
+
+@defer{
+<app-producto></app-producto>
+}@placeholder {
+  <p>Se esta cargando el componente de producto</p>
+}

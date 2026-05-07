@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 
 @Component({
+  standalone: true,
   selector: 'app-ventas',
-  imports: [],
   templateUrl: './ventas.html',
-  styleUrl: './ventas.css',
+  styleUrls: ['./ventas.css'],
 })
-export class Ventas {}
+export class VentasComponent {}
