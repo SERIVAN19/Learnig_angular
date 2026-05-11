@@ -86,3 +86,25 @@ target="_blank">Visitar sitio web</a>
 }@placeholder {
   <p>Se esta cargando el componente de producto</p>
 }
+
+
+
+<!--Pipes en Angular-->
+<h2>Tuberias en Angular</h2>
+
+{{web | uppercase}}
+<br>
+{{ web | lowercase }}
+<br>
+{{ web | slice: 0:5 }}
+<br>
+{{ web | slice: 5 }}
+<br>
+{{ web | slice: -3 }}
+<br>
+{{ web | slice: -5:-2 }}
+<br>
+{{ fecha | date: 'longDate' }}
+<br>
+<!--Pipes personalizados-->
+{{ "El cielo esta enladrillado, ¿quien lo desenladrillara?" | cambiaLetras }}
