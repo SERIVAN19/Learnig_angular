@@ -7,3 +7,15 @@ p {
     font-size: 20px;
     color: rgb(17, 102, 74);
 }
+.resaltar{
+    background-color: orange;
+    padding: 10px;
+    font-weight: bold;
+    font-style: italic;
+}
+
+.destacarmenos{
+    background-color: gray;
+    padding: 10px;
+    font-style: italic;
+}
