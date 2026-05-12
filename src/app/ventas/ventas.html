@@ -1,2 +1,9 @@
-<p>ventas works!</p>
 <h1>Ingresaste a ventas como administrador</h1>
+
+<h2>Directivas en Angular</h2>
+
+
+<h3 [ngClass]="mostar === 'Si' ? 'resaltar' : 'destacarmenos'"> Soy Sergio</h3>
+<h3 [ngStyle]="mostar === 'Si' ? {color: 'white', backgroundColor: 'blue'} : null"> Soy Sergio</h3>
+
+<p [ngStyle]="{backgroundColor: 'lightgray', padding: '10px',borderRadius: '5px'}">Directiva ngStyle</p>
