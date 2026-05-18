@@ -5,12 +5,13 @@ import { RouterOutlet } from '@angular/router';
 //import { VentasComponent } from './components/ventas/ventas';
 import { config } from './models/config';
 import { Cine } from './components/cine/cine';
+import { Carrito } from './components/carrito/carrito';
 
 
 @Component({
   standalone: true,
   selector: 'app-root',
-  imports: [Cine],
+  imports: [Carrito],
   templateUrl: './app.html',
   styleUrls: ['./app.css']
 })
