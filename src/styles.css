@@ -19,3 +19,14 @@ p {
     padding: 10px;
     font-style: italic;
 }
+
+.notificacion{
+    margin-top: 7px;
+    background-color: lightblue;
+    border: 1px solid blue;
+    padding: 10px;
+    font-weight: bold;
+    font-style: italic;
+    border-radius: 5px;
+    text-align: center;
+}

@@ -1,0 +1,38 @@
+<hr>
+
+<p>cine works!</p>
+
+<!-- lista de peliculas desde el arreglo de objetos -->
+<h1>Películas en cartelera:</h1>
+<ul>
+    @for (pelicula of peliculas; track pelicula.id) {
+    <li>
+        <h3>{{ pelicula.titulo }}</h3>
+        <p>Director: {{ pelicula.director }}</p>
+        <p>Año: {{ pelicula.anio }}</p>
+        <p>Género: {{ pelicula.genero }}</p>
+        <p>Plataforma: {{ pelicula.plataforma }}</p>
+        <p>Pago: {{ pelicula.pago ? 'Sí' : 'No' }}</p>
+        <button (click)="borrarPelicula(pelicula)">Borrar película</button>
+    </li>
+    }
+</ul>
+
+<!-- way data binding paso a paso -->
+<h1>Formulario y two-way data binding</h1>
+<input type="text" [(ngModel)]="MiPelicula" 
+                (focus)="haciendoFoco()" 
+                (blur)="saliendoFoco()" 
+                (keyup)="pulsandoTeclas()"
+                placeholder="Ingrese el título de la película"><br><br>
+<button (click)="showPelicula()">Mostrar película</button>
+<button (click)="sumarPelicula()">Agregar película</button>
+<p>Película ingresada: {{ MiPelicula }}</p>
+
+<!-- Lista de películas sin datos completos -->
+<h2>Películas sin datos completos:</h2>
+<ul>
+    @for (pelicula of peliculaSinDatos; track pelicula) {
+    <li>{{ pelicula }}</li>
+    }
+</ul>

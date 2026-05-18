@@ -1,13 +1,21 @@
 import { Component } from '@angular/core';
-import { UpperCasePipe, LowerCasePipe,SlicePipe, DatePipe } from '@angular/common';
+import { UpperCasePipe, LowerCasePipe, SlicePipe, DatePipe } from '@angular/common';
 import { VentasComponent } from '../ventas/ventas';
 import { ProductoComponent } from '../producto/producto.component';
-import { CambiaLetrasPipe } from '../pipes/cambiaLetras.pipes';
+import { CambiaLetrasPipe } from '../../pipes/cambiaLetras.pipes';
 
 @Component({
   standalone: true,
   selector: 'app-usuario',
-  imports: [VentasComponent, ProductoComponent, UpperCasePipe, LowerCasePipe, SlicePipe, DatePipe, CambiaLetrasPipe],
+  imports: [
+    VentasComponent,
+    ProductoComponent,
+    UpperCasePipe,
+    LowerCasePipe,
+    SlicePipe,
+    DatePipe,
+    CambiaLetrasPipe
+  ],
   templateUrl: './usuario.html',
   styleUrls: ['./usuario.css'],
 })
