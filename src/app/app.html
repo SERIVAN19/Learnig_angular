@@ -1,7 +1,25 @@
+<!--   <app-producto></app-producto>   -->
+<!-- <app-usuario></app-usuario> -->
+<!-- <app-cine></app-cine> -->
+<!-- <app-carritosenales></app-carritosenales> -->
+<!-- <app-padre></app-padre> -->
+<!-- <app-usuarios-http></app-usuarios-http> -->
+ 
+<hr>
+<h2>Bienvenido a la sección de {{ title() }}</h2>
+<a routerLink="/inicio" routerLinkActive="activarLink">Inicio</a> &nbsp;|&nbsp;
+<a routerLink="/componentes" routerLinkActive="activarLink">Componentes</a> &nbsp;|&nbsp;
+<a routerLink="/plantillas" routerLinkActive="activarLink">Plantillas</a> &nbsp;|&nbsp;
+<a routerLink="/directivas" routerLinkActive="activarLink">Directivas</a> &nbsp;|&nbsp;
+<a routerLink="/modelos" routerLinkActive="activarLink">Modelos</a> &nbsp;|&nbsp;
+<a routerLink="/carrito" routerLinkActive="activarLink">Carrito</a> &nbsp;|&nbsp;
+<a routerLink="/signals" routerLinkActive="activarLink">Carrito Señales</a> &nbsp;
+<a routerLink="/comunicacion" routerLinkActive="activarLink">Comunicación</a> &nbsp;|&nbsp;
+<a routerLink="/servicios" routerLinkActive="activarLink">Servicios</a> &nbsp;|&nbsp;
+<a routerLink="/formularios" routerLinkActive="activarLink">Formularios</a> &nbsp;|&nbsp;
+<a routerLink="/formularios-reactivos" routerLinkActive="activarLink">Formularios Reactivos</a>
+<hr>
 
-      <h1>Hello Sergio, {{ title() }}</h1>
-
-      <!--   <app-producto></app-producto>   -->
-      <!-- <app-usuario></app-usuario> -->
-      <!-- <app-cine></app-cine> -->
-      <app-carrito></app-carrito>
+<router-outlet>
+      <!-- Aquí se cargarán los componentes según la ruta seleccionada -->
+</router-outlet>

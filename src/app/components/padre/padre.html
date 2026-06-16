@@ -1,0 +1,18 @@
+<hr>
+<h1>Soy el componente padre</h1>
+<p>Soy un componente que contiene otro componente y ese es mi hijo.</p>
+<p>Te presento a mi hijo: </p>
+{{ saludoRecibido }}
+
+
+<app-hijo [nombreDelPadre]="nombreDelPadre" (saludoDelHijo)="recibirSaludoDelHijo($event)"></app-hijo>
+
+<!--Atributos en Angular-->
+<!--ejemplos-->
+<!--
+
+<section id="ejemplo" class="ejemplo" [tabIndex]="" (click)="alert('Hola')" ngIf="true" ngClass="clase1">
+  <p>Este es un ejemplo de sección en Angular.</p>
+</section>
+
+-->

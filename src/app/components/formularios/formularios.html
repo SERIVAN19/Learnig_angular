@@ -1,0 +1,33 @@
+<h2>Formularios en Angular</h2>
+<p>Como trabajar con formularios simples en Angular</p>
+
+<!--Formulario con validaciones -->
+<form (ngSubmit)="onSubmit()" #form="ngForm">
+  <label for="nombre">Nombre:</label>
+  <input type="text" id="nombre" name="nombre" [(ngModel)]="nombre" required minlength="2" maxlength="100" #nombreInput="ngModel"> <br>
+  @if (nombreInput.invalid && nombreInput.touched) {
+    <div class="error">
+      
+    </div>
+  }
+  <label for="email">Email:</label>
+  <input type="email" id="email" name="email" [(ngModel)]="email" required email > <br>
+
+  <label for="edad">Edad:</label>
+  <input type="number" id="edad" name="edad" [(ngModel)]="edad" required min="0" max="120"> <br>
+
+  <label for="contraseña">Contraseña:</label>
+  <input type="password" id="contraseña" name="contraseña" [(ngModel)]="contrasenia" required minlength="6" maxlength="100"s> <br>
+
+  <button type="submit" [disabled]="!form.valid">Enviar</button>
+</form>
+
+<!--Interpolación de datos -->
+<hr>
+<p>Datos ingresados:</p>
+<ul>
+  <li>Nombre: {{ nombre }}</li>
+  <li>Email: {{ email }}</li>
+  <li>Edad: {{ edad }}</li>
+  <li>Contraseña: {{ contrasenia }}</li>
+</ul>

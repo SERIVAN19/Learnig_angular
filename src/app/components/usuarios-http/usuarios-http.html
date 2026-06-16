@@ -1,0 +1,18 @@
+<h1>Peticion HTTP por post</h1>
+<button (click)="guardarProducto()">Guardar nuevo producto</button>
+
+
+
+<h1>Buscar productos</h1>
+<input type="text" [(ngModel)]="productoId" (keyup)="buscarProducto()"/>
+<br>
+{{ productoSeleccionado?.nombre }}" - "{{ productoSeleccionado?.precio }}
+
+
+<hr>
+<h1>Listado de Productos</h1>
+<ul>
+    @for(producto of productos; track producto.id) {
+        <li>{{ producto?.nombre+ " - " + producto?.precio }}</li>
+    }
+</ul>

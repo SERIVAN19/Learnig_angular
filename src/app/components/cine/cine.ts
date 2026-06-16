@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { Pelicula } from '../../models/pelicula';// Importa la clase Pelicula desde el archivo correspondiente
 import { FormsModule } from '@angular/forms'; // Importa FormsModule para usar ngModel
+import { PeliculaService } from '../../services/pelicula.service'; // Importa el servicio de películas para usarlo en el componente
 
 @Component({
   selector: 'app-cine',
@@ -9,18 +10,14 @@ import { FormsModule } from '@angular/forms'; // Importa FormsModule para usar n
   styleUrl: './cine.css',
 })
 export class Cine {
-  peliculas: Pelicula[] = [];// Define un array de objetos Pelicula
 
+  public peliculas: Pelicula[] = []; // Define una propiedad para almacenar la lista de películas
   public MiPelicula: String = ""; // Define una propiedad para almacenar el título de la película ingresada por el usuario
   public peliculaSinDatos: String[] = [];
 
   //Constructor para inicializar el array de películas con algunos datos de ejemplo
-  constructor() {
-    this.peliculas = [
-      new Pelicula("El Padrino", "Francis Ford Coppola", 1972, "Drama", "Netflix", true),
-      new Pelicula("El Padrino II", "Francis Ford Coppola", 1974, "Drama", "Amazon Prime", true),
-      new Pelicula("El Padrino III", "Francis Ford Coppola", 1990, "Drama", "HBO Max", true)
-    ];
+  constructor(private peliculaService: PeliculaService) {// Inyecta el servicio de películas en el constructor
+    this.peliculas = this.peliculaService.getPeliculas(); // Obtiene la lista de películas del servicio y la asigna a la propiedad peliculas
   }
 
   //Metodo para mostrar una alerta con el título de la película ingresada por el usuario
@@ -57,4 +54,8 @@ export class Cine {
     console.log("¡Estás pulsando una tecla en el campo de entrada!");
   }
 
+
+  ngOnInit() {
+    this.peliculaService.saludoService(); // Llama al método saludoService del servicio de películas cuando el componente se inicializa
+  }
 }

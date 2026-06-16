@@ -1,0 +1,44 @@
+
+<p>Ejemplo de señales en Angular</p>
+
+
+<div>
+
+  <p>
+    Camibiar nombre de la tienda
+    <input type="text" [value]="nombreTienda()" (input)="nombreTienda.set($event.target.value)" />
+  </p>
+
+  <h2>Nombre de la tienda: {{ nombreTienda() }}</h2>
+  <p>Productos en el carrito: {{ cantidadProductos() }}</p>
+  <p>Total: ${{ totalCarrito().toFixed(2) }}</p>
+
+  <button (click)="agregarAlCarrito()">Añadir al carrito</button>
+  
+    <button (click)="agregarCincoUnidades()">Añadir 5 unidades</button>
+    <button (click)="borrarProducto()">Borrar producto</button>
+    <button (click)="aplicarCupon()">Aplicar cupon del 10% de descuento</button>
+    <button (click)="limpiarCarrito()">Limpiar carrito</button>
+
+</div>
+
+<!-- Notificación de acciones realizadas -->
+@if (notificacion()) {
+<div class="notificacion">
+  <strong>Notificaciones</strong>
+  <p>{{ notificacion() }}</p>
+</div>
+}
+
+
+
+
+<!---
+<h3>Contador: {{ contador() }}</h3>
+
+<input type="number" [value]="incremento()" (input)="incremento.set($event.target.valueAsNumber)" />
+
+<button (click)="contador.update((c) => c + incremento())">Incrementar</button>
+<button (click)="contador.update((c) => c - incremento())">Decrementar</button>
+<h3>Contador: {{ incremento() }}</h3>
+-->

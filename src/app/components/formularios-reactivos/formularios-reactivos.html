@@ -1,0 +1,23 @@
+<h1>Formularios reactivos en Angular</h1>
+
+
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
+    <div class="field">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" formControlName="nombre">
+    </div>
+    <div class="field">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email">
+    </div>
+    <div class="field">
+        <label for="edad">Edad:</label>
+        <input type="number" id="edad" formControlName="edad">
+    </div>
+    <div class="field">
+        <label for="password">Contraseña:</label>
+        <input type="password" id="password" formControlName="password">
+    </div>
+
+    <button type="submit" [disabled]="formulario.invalid">Enviar</button>
+</form>
